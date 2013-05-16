@@ -35,12 +35,32 @@ and use it like so when you want to send an email.
 	$email->from('noreply@yourapp.com');
 	$email->to('email@domain.com');
 	$email->subject('Subject for Email');
-	$result = $email->send('Here is some test content for the email.');
+	$result = $email->send();
 
-The `$result` object will contain information about the success or failure of the message sending.
+The `$result` object will contain information about the success or failure of the message sending. `$result` will contain the `Mandrill` key, which contains the response from Mandrill.
 
-It's very simple right now and doesn't support anything more complex, like multiple recipients or attachments.
+## Config
 
+Mandrill has many options that can be passed with messages, which are described in the [Mandrill API Documentation](https://mandrillapp.com/api/docs/messages.html). You can pass these to this plugin in the email configuration (ex. 1) or with $email->config() (ex. 2).
 
+##### Example 1 (global config)
+
+		public $mandrill = array(
+			'transport' => 'Mandrill.Mandrill',
+			'uri' => 'https://mandrillapp.com/api/1.0/',
+			'key' => 'your-key-here',
+			'track_opens' => true,
+			'track_clicks' => true
+		);
+
+##### Example 2 (instance config)
+
+		$email->config(array(
+			'tags' => array('password_reset'),
+			'template_name' => 'password_reset',
+			'auto_html' => false
+		));
+
+----------------------
 © Soroush Khanlou 2013  
-Modified by: J. Miller
+Modified heavily by: [J. Miller](https://github.com/jmillerdesign)
