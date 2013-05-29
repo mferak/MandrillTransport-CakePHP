@@ -84,7 +84,7 @@ class MandrillTransport extends AbstractTransport {
 		$headers = $this->_headersToString($this->_headers);
 
 		return array(
-			'has_error' => (array_key_exists('status', $result) && ($result['status'] == 'error')),
+			'has_error' => (!$result || (array_key_exists('status', $result) && ($result['status'] == 'error'))),
 			'Mandrill'  => $result,
 			'headers'   => $headers,
 			'message'   => $message
