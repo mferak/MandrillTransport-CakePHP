@@ -125,6 +125,9 @@ class Email extends MandrillAppModel {
  * @return string Subject
  */
 	public function subject() {
+		if (!array_key_exists('subject', $this->data[$this->alias]['msg'])) {
+			return '';
+		}
 		return $this->data[$this->alias]['msg']['subject'];
 	}
 
@@ -134,6 +137,9 @@ class Email extends MandrillAppModel {
  * @return string From email address
  */
 	public function fromEmail() {
+		if (!array_key_exists('from_email', $this->data[$this->alias]['msg'])) {
+			return '';
+		}
 		return $this->data[$this->alias]['msg']['from_email'];
 	}
 
@@ -155,6 +161,9 @@ class Email extends MandrillAppModel {
  * @return string Text body
  */
 	public function textBody() {
+		if (!array_key_exists('text', $this->data[$this->alias]['msg'])) {
+			return '';
+		}
 		return $this->data[$this->alias]['msg']['text'];
 	}
 
@@ -164,6 +173,9 @@ class Email extends MandrillAppModel {
  * @return string HTML body
  */
 	public function htmlBody() {
+		if (!array_key_exists('html', $this->data[$this->alias]['msg'])) {
+			return '';
+		}
 		return $this->data[$this->alias]['msg']['html'];
 	}
 
