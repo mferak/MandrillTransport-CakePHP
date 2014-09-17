@@ -137,11 +137,13 @@ class MandrillTransport extends AbstractTransport {
 		$message['subject'] = mb_decode_mimeheader($this->_headers['Subject']);
 
 		// the sender email address.
-		$message['from_email'] = array_shift(array_keys($this->_cakeEmail->from()));
+		$from = $this->_cakeEmail->from();
+		$message['from_email'] = array_keys($from);
+		$message['from_email'] = array_shift($message['from_email']);
 
 		// optional from name to be used
-		if (reset($this->_cakeEmail->from()) != $message['from_email']) {
-			$message['from_name'] = reset($this->_cakeEmail->from());
+		if (reset($from) != $message['from_email']) {
+			$message['from_name'] = reset($from);
 		}
 
 		// an array of recipient information.
