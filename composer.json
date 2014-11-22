@@ -1,0 +1,31 @@
+
+{
+	"name": "jmillerdesign/mandrill_transport",
+	"type": "cakephp-plugin",
+	"description": "This enables using CakeEmail from CakePHP 2.x with Mandrill",
+	"keywords": [
+		"cakephp",
+		"mandrill",
+		"transport"
+	],
+	"homepage": "https://github.com/jmillerdesign/MandrillTransport-CakePHP/",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "J. Miller",
+			"email": "j@jmillerdesign.com"
+		},
+		{
+			"name": "Soroush Khanlou",
+			"email": "soroush@khanlou.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/jmillerdesign/MandrillTransport-CakePHP/issues",
+		"source": "https://github.com/jmillerdesign/MandrillTransport-CakePHP"
+	},
+	"require": {
+		"php": ">=5.3.0",
+		"composer/installers": "*"
+	}
+}
