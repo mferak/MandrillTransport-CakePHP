@@ -1,6 +1,6 @@
 
 {
-	"name": "jmillerdesign/mandrill_transport",
+	"name": "jmillerdesign/mandrill",
 	"type": "cakephp-plugin",
 	"description": "This enables using CakeEmail from CakePHP 2.x with Mandrill",
 	"keywords": [
