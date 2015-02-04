@@ -284,7 +284,7 @@ class MandrillTransport extends AbstractTransport {
 			$message['attachments'][] = array(
 				'type' => $fileInfo['mimetype'],
 				'name' => $filename,
-				'content' => $this->_readFile($fileInfo['file'])
+				'content' => isset($fileInfo['data']) ? $fileInfo['data'] : $this->_readFile($fileInfo['file'])
 			);
 		}
 
