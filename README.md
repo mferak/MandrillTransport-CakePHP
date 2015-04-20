@@ -63,6 +63,10 @@ and use it like so when you want to send an email.
 
 The `$result` object will contain information about the success or failure of the message sending. `$result` will contain the `Mandrill` key, which contains the response from Mandrill.
 
+### Use template settings for *from* and *subject*
+
+In the above example, if you don't set ```$email->subject()```, then it will use Mandrill's template setting instead. If you set the ```from``` email address and/or name to ```mandrill@example.com```, then it will use Mandrill's template setting instead. *Note: Setting a from address is required by Cake.*
+
 ## Inbound Email Usage
 
 1. Configure [mandrillapp.com/inbound](https://mandrillapp.com/inbound) and point the Webhook to ```http://example.com/mandrill/emails/inbound``` (replace example.com with your live domain URL)

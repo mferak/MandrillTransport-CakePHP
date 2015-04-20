@@ -146,6 +146,15 @@ class MandrillTransport extends AbstractTransport {
 			$message['from_name'] = reset($from);
 		}
 
+		// If you sent from "mandrill@example.com",
+		// then send from the template's settings instead
+		if ($message['from_email'] == 'mandrill@example.com') {
+			unset($message['from_email']);
+		}
+		if (array_key_exists('from_name', $message) && ($message['from_name'] == 'mandrill@example.com')) {
+			unset($message['from_name']);
+		}
+
 		// an array of recipient information.
 		$message['to'] = array();
 		$tos = array_merge($this->_cakeEmail->to(), $this->_cakeEmail->cc());
