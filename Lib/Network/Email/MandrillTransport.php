@@ -172,7 +172,7 @@ class MandrillTransport extends AbstractTransport {
 		// (currently only Reply-To and X-* headers are allowed)
 		$message['headers'] = array();
 		if ($this->_cakeEmail->replyTo()) {
-			$message['headers']['Reply-To'] = array_shift(array_keys($this->_cakeEmail->replyTo()));
+			$message['headers']['Reply-To'] = current(array_keys($this->_cakeEmail->replyTo()));
 		}
 		if (array_key_exists('headers', $this->_config)) {
 			$message['headers'] = array_merge($message['headers'], $this->_config['headers']);
