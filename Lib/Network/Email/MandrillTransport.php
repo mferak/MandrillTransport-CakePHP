@@ -57,7 +57,7 @@ class MandrillTransport extends AbstractTransport {
 		$this->_headers = $this->_cakeEmail->getHeaders(array('from', 'to', 'cc', 'bcc', 'replyTo', 'subject'));
 
 		// Setup connection
-		$this->__mandrillConnection = &new HttpSocket();
+		$this->__mandrillConnection = new HttpSocket();
 
 		$message = $this->__buildMessage();
 
