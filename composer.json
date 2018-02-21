@@ -1,6 +1,6 @@
 
 {
-	"name": "jmillerdesign/mandrill",
+	"name": "mferak/mandrill",
 	"type": "cakephp-plugin",
 	"description": "This enables using CakeEmail from CakePHP 2.x with Mandrill",
 	"keywords": [
@@ -8,7 +8,7 @@
 		"mandrill",
 		"transport"
 	],
-	"homepage": "https://github.com/jmillerdesign/MandrillTransport-CakePHP/",
+	"homepage": "https://github.com/mferak/MandrillTransport-CakePHP/",
 	"license": "MIT",
 	"authors": [
 		{
